@@ -1,0 +1,5 @@
+
+.vscode
+build
+**/*.mp4
+**/*.onnx

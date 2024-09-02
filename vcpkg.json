@@ -1,0 +1,6 @@
+{
+  "dependencies": [
+    {"name": "opencv", "default-features": true, "features": ["ffmpeg"]},
+    {"name": "boost-program-options"}
+  ]
+}
