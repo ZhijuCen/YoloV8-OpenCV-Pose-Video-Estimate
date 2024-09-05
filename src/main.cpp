@@ -16,6 +16,8 @@ int main(int argc, char** argv)
     if (!options_created)
         return 1;
     PoseNet net(vm["model-path"].as<std::string>());
+    net.setScoreThres(vm["score-thres"].as<float>())
+        .setNmsThres(vm["nms-thres"].as<float>());
     cv::VideoCapture cap(vm["input-video"].as<std::string>());
     if (!cap.isOpened())
     {
@@ -54,7 +56,9 @@ bool create_options(int argc, char** argv, po::variables_map &vm)
         ("help", "produce help message.")
         ("model-path,m", po::value<string>()->default_value("yolov8n-pose.onnx"), "Path to onnx model.")
         ("input-video,i", po::value<string>()->default_value("input_video.mp4"), "Path to input video.")
-        ("output-video,o", po::value<string>()->default_value("output_video.mp4"), "Path to output video.");
+        ("output-video,o", po::value<string>()->default_value("output_video.mp4"), "Path to output video.")
+        ("score-thres,s", po::value<float>()->default_value(0.3), "Score threshold to show pose.")
+        ("nms-thres,n", po::value<float>()->default_value(0.8), "IOU threshold to execute NMS.");
     po::store(po::parse_command_line(argc, argv, desc), vm);
     po::notify(vm);
     if (vm.count("help"))

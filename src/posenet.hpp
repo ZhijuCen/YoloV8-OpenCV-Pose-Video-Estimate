@@ -16,8 +16,8 @@ private:
     std::string modelPath{};
     bool runWithCuda{false};
     cv::Size2f inputShape{640.f, 640.f};
-    float nmsThres{0.4};
-    float scoreThres{0.5};
+    float nmsThres{0.8};
+    float scoreThres{0.4};
 
     void loadOnnxNet();
     cv::Mat letterBox(const cv::Mat &source);
