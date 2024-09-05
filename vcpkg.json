@@ -1,6 +1,6 @@
 {
   "dependencies": [
-    {"name": "opencv", "default-features": true, "features": ["ffmpeg"]},
+    {"name": "opencv", "default-features": true, "features": ["ffmpeg", "contrib", "dnn-cuda"]},
     {"name": "boost-program-options"}
   ]
 }

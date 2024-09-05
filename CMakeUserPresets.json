@@ -1,0 +1,18 @@
+{
+    "version": 4,
+    "configurePresets": [
+        {
+            "name": "default-cuda",
+            "inherits": "default",
+            "cacheVariables": {
+                "WITH_CUDA": "ON",
+                "WITH_CUDNN": "ON",
+                "OPENCV_DNN_CUDA": "ON",
+                "CUDA_ARCH_BIN": "7.5",
+                "ENABLE_FAST_MATH": "1",
+                "CUDA_FAST_MATH": "1",
+                "WITH_CUBLAS": "1"
+            }
+        }
+    ]
+}
