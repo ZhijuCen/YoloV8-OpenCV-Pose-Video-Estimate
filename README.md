@@ -15,9 +15,9 @@ yolo export task=pose model=yolov8x-pose.pt format=onnx
 
 ```sh
 # Configuration and install packages in 3h
-cmake --preset=default-cuda
+cmake --preset=default
 # Build
-cmake --build ./build --parallel 14
+cmake --build ./build --preset=default --parallel 14
 ```
 
 Or, if prefer run on CPU
@@ -26,7 +26,7 @@ Or, if prefer run on CPU
 rm vcpkg.json
 mv vcpkg-cpu.json vcpkg.json
 cmake --preset=default
-cmake --build ./build --parallel 14
+cmake --build ./build --preset=default --parallel 14
 ```
 
 ## Usage

@@ -3,26 +3,13 @@
     "configurePresets": [
         {
             "name": "default",
-            "binaryDir": "${sourceDir}/build",
-            "installDir": "${sourceDir}/install",
-            "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-            }
-        },
-        {
-            "name": "ninja",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build",
-            "installDir": "${sourceDir}/install",
-            "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-            }
+            "installDir": "${sourceDir}/install"
         },
         {
-            "name": "unix",
-            "generator": "Unix Makefiles",
-            "binaryDir": "${sourceDir}/build",
-            "installDir": "${sourceDir}/install",
+            "name": "vcpkg",
+            "inherits": "default",
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
             }
