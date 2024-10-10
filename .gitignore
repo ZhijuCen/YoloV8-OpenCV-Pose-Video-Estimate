@@ -1,5 +1,6 @@
 
 .vscode
 build
+install
 **/*.mp4
 **/*.onnx
